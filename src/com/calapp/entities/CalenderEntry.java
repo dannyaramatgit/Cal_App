@@ -6,8 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class CalenderEntry {
 	
 	private long entryId;
-	private long fromFullTime;
-	private long toFullTime;
+	private String toTime;
+	private String fromTime;
 	private String subject;
 	private String comments;
 	
@@ -18,30 +18,18 @@ public class CalenderEntry {
 		this.entryId=entryId;
 	}
 	
-	public CalenderEntry(long entryId, long fromFullTime, long toFullTime, String subject, String comments) {
+	public CalenderEntry(long entryId, String fromTime, String toTime, String subject, String comments) {
 		this.entryId = entryId;
-		this.fromFullTime = fromFullTime;
-		this.toFullTime = toFullTime;
 		this.subject = subject;
 		this.comments = comments;
+		this.fromTime = fromTime;
+		this.toTime = toTime;
 	}
 
 	public long getEntryId() {
 		return entryId;
 	}
 
-	public long getFromFullTime() {
-		return fromFullTime;
-	}
-	public void setFromFullTime(long fromFullTime) {
-		this.fromFullTime = fromFullTime;
-	}
-	public long getToFullTime() {
-		return toFullTime;
-	}
-	public void setToFullTime(long toFullTime) {
-		this.toFullTime = toFullTime;
-	}
 	public String getSubject() {
 		return subject;
 	}
@@ -55,18 +43,30 @@ public class CalenderEntry {
 		this.comments = comments;
 	}
 	
-	
+	public String getToTime() {
+		return toTime;
+	}
+
+	public void setToTime(String toTime) {
+		this.toTime = toTime;
+	}
+
+	public String getFromTime() {
+		return fromTime;
+	}
+
+	public void setFromTime(String fromTime) {
+		this.fromTime = fromTime;
+	}
+
 	public String toString(){
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonInString = mapper.writeValueAsString(this);
 			return jsonInString;
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("Failed to parse object to JSON. Id:" + getEntryId());
 			return null;
 		}
 	}
-	
-
 }

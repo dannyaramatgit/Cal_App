@@ -1,6 +1,8 @@
+com\calapp\manager\Utilities.class
+com\calapp\persistance\PersistanceIfc.class
 com\calapp\rest\PostClient.class
-com\calapp\tests\EntityManagerTests.class
-com\calapp\cache\EntriesCache.class
+com\calapp\persistance\cache\EntriesCache.class
 com\calapp\manager\EntryManager.class
 com\calapp\entities\CalenderEntry.class
+com\calapp\tests\EntityManagerTests.class
 com\calapp\rest\CtoCalService.class
