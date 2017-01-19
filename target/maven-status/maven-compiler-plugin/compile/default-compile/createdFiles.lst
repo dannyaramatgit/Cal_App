@@ -1,0 +1,6 @@
+com\calapp\rest\PostClient.class
+com\calapp\tests\EntityManagerTests.class
+com\calapp\cache\EntriesCache.class
+com\calapp\manager\EntryManager.class
+com\calapp\entities\CalenderEntry.class
+com\calapp\rest\CtoCalService.class
